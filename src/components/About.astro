@@ -30,6 +30,10 @@ const getSkillIcon = (skill: string) => {
     "ts": "devicon-typescript-plain colored",
     "typescript": "devicon-typescript-plain colored",
     "python": "devicon-python-plain colored",
+    "django": "devicon-django-plain colored",
+    "prisma": "devicon-prisma-original",
+    "sqlite": "devicon-sqlite-plain colored",
+    "bootstrap": "devicon-bootstrap-plain colored",
     "c++": "devicon-cplusplus-plain colored",
     "c#": "devicon-csharp-plain colored",
     "java": "devicon-java-plain colored",
@@ -64,9 +68,9 @@ const getSkillIcon = (skill: string) => {
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
       <div class="lg:col-span-4">
         <h2
-          class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900"
+          class="text-4xl font-bold text-gray-900 dark:text-white"
         >
-          About Me
+          Sobre mí
         </h2>
         <div
           class="w-[75px] h-[5px] mt-2 rounded-full"
@@ -76,7 +80,7 @@ const getSkillIcon = (skill: string) => {
       </div>
 
       <div class="lg:col-span-8 space-y-8">
-        <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-600">
+        <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-600 dark:text-slate-300">
           {siteConfig.aboutMe}
         </p>
 
@@ -84,7 +88,7 @@ const getSkillIcon = (skill: string) => {
           <div class="flex flex-wrap gap-3">
             {
               siteConfig.skills.map((skill) => (
-                <span class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 text-gray-800 rounded-full text-sm sm:text-base md:text-lg font-medium hover:bg-gray-200 transition-colors duration-200">
+                <span class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 text-gray-800 rounded-full text-sm sm:text-base md:text-lg font-medium hover:bg-gray-200 transition-colors duration-200 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700">
                   {/* Icono inyectado a la izquierda */}
                   <i class={`${getSkillIcon(skill)} text-lg sm:text-xl`}></i>
                   {skill}

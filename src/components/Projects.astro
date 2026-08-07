@@ -29,6 +29,10 @@ const getSkillIcon = (skill: string) => {
     "ts": "devicon-typescript-plain colored",
     "typescript": "devicon-typescript-plain colored",
     "python": "devicon-python-plain colored",
+    "django": "devicon-django-plain colored",
+    "prisma": "devicon-prisma-original",
+    "sqlite": "devicon-sqlite-plain colored",
+    "bootstrap": "devicon-bootstrap-plain colored",
     "c++": "devicon-cplusplus-plain colored",
     "c#": "devicon-csharp-plain colored",
     "java": "devicon-java-plain colored",
@@ -56,12 +60,12 @@ const getSkillIcon = (skill: string) => {
 
 {
   hasProjects && (
-    <section id="projects" class="p-8 sm:p-12 md:p-16 lg:p-24">
+    <section id="projects" class="p-8 sm:p-12 md:p-16 lg:p-24" style={`--accent-color: ${siteConfig.accentColor}`}>
       <div>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           <div class="lg:col-span-4">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
-              Projects
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white">
+              Proyectos
             </h2>
             <div
               class="w-[75px] h-[5px] mt-2 rounded-full"
@@ -72,27 +76,17 @@ const getSkillIcon = (skill: string) => {
           <div class="lg:col-span-8">
             <div class="space-y-8">
               {siteConfig.projects.map((project, index) => {
-                const Component = project.link ? "a" : "div";
-                const linkProps = project.link
-                  ? {
-                      href: project.link,
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                    }
-                  : {};
-
                 return (
                   <div class="group relative">
-                    <Component
-                      {...linkProps}
-                      class={`block relative p-4 sm:p-6 md:p-8 bg-gray-50 rounded-xl sm:rounded-2xl border border-gray-200 transition-all duration-300 ${
-                        project.link
-                          ? "hover:bg-white hover:shadow-xl hover:border-gray-300 hover:-translate-y-1"
-                          : ""
-                      }`}
-                    >
+                    <div class="block relative p-4 sm:p-6 md:p-8 bg-gray-50 rounded-xl sm:rounded-2xl border border-gray-200 transition-all duration-300 dark:bg-slate-800/50 dark:border-slate-700 hover:bg-white hover:shadow-xl hover:border-gray-300 hover:-translate-y-1 dark:hover:bg-slate-800 dark:hover:border-slate-600">
                       {project.link && (
-                        <div class="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center bg-gray-900 rounded-full text-white transition-all duration-300 group-hover:bg-gray-700">
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Abrir repositorio de ${project.name}`}
+                          class="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center bg-gray-900 rounded-full text-white transition-all duration-300 group-hover:bg-gray-700 dark:bg-slate-700 dark:group-hover:bg-slate-600"
+                        >
                           <svg
                             class="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                             fill="none"
@@ -106,7 +100,7 @@ const getSkillIcon = (skill: string) => {
                               d="M7 17L17 7M17 7H7M17 7V17"
                             />
                           </svg>
-                        </div>
+                        </a>
                       )}
 
                       <div class="space-y-4">
@@ -117,13 +111,13 @@ const getSkillIcon = (skill: string) => {
                           >
                             0{index + 1}
                           </span>
-                          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mt-1">
+                          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mt-1 dark:text-white">
                             {project.name}
                           </h3>
                         </div>
 
                         <p
-                          class={`text-base sm:text-lg text-gray-600 leading-relaxed ${project.link ? "pr-12 sm:pr-14 md:pr-16" : ""}`}
+                          class={`text-base sm:text-lg text-gray-600 leading-relaxed dark:text-slate-300 ${project.link ? "pr-12 sm:pr-14 md:pr-16" : ""}`}
                         >
                           {project.description}
                         </p>
@@ -132,9 +126,7 @@ const getSkillIcon = (skill: string) => {
                           <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
                             {project.skills.map((skill) => (
                               <span
-                                class={`inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gray-900 text-white dark:bg-slate-800 dark:text-slate-100 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 ${
-                                  project.link ? "group-hover:bg-gray-800 dark:group-hover:bg-slate-700" : ""
-                                }`}
+                                class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gray-900 text-white dark:bg-slate-800 dark:text-slate-100 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 group-hover:bg-gray-800 dark:group-hover:bg-slate-700"
                               >
                                 {/* Inyección automática del ícono de la tecnología */}
                                 <i class={`${getSkillIcon(skill)} text-sm`}></i>
@@ -143,8 +135,29 @@ const getSkillIcon = (skill: string) => {
                             ))}
                           </div>
                         )}
+
+                        {project.gallerySlug && (
+                          <div class="pt-2">
+                            <a href={`/galeria/${project.gallerySlug}/`} class="btn-gallery">
+                              <svg
+                                class="w-4 h-4"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                />
+                              </svg>
+                              Ver Galería
+                            </a>
+                          </div>
+                        )}
                       </div>
-                    </Component>
+                    </div>
                   </div>
                 );
               })}
@@ -155,3 +168,24 @@ const getSkillIcon = (skill: string) => {
     </section>
   )
 }
+
+<style>
+  .btn-gallery {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 1px solid color-mix(in srgb, var(--accent-color) 45%, transparent);
+    color: var(--accent-color);
+    background: color-mix(in srgb, var(--accent-color) 10%, transparent);
+    transition: all 0.3s ease;
+  }
+  .btn-gallery:hover {
+    color: #ffffff;
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+  }
+</style>

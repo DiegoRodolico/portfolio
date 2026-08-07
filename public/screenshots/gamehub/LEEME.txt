@@ -1,0 +1,15 @@
+Cómo subir capturas de este proyecto:
+
+1. Agregá acá los screenshots que quieras mostrar.
+2. Formatos soportados: .png, .jpg, .jpeg, .webp, .gif, .avif, .svg
+3. Se muestran en orden alfabético/numérico. Nombralos así si querés controlar el orden:
+   01_inicio.png
+   02_torneos.png
+   03_admin.png
+   ...
+
+Después de agregar las imágenes, reconstruí el sitio:
+   npm run build
+
+Las imágenes se verán automáticamente en:
+   /galeria/gamehub/

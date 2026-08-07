@@ -35,6 +35,8 @@ The project follows a component-based architecture with all customization centra
 2. **Conditional Rendering**: Sections automatically hide if their data is removed from the config
 3. **Component Independence**: Each section is a self-contained component that reads from the config
 4. **Accent Color System**: Single `accentColor` in config propagates throughout the site via CSS custom properties
+5. **Class-based Dark Mode**: Tailwind v4 uses `@custom-variant dark` (see `src/styles/global.css`), driven by a `.dark` class on `<html>` controlled by the theme toggle
+6. **Project Galleries**: Each project with a `gallerySlug` shows a "Ver Galería" button that links to `/galeria/<slug>/`. Screenshots live in `public/screenshots/<slug>/` and are read at build time by `src/lib/gallery.ts`
 
 ## Important Implementation Details
 
@@ -43,6 +45,7 @@ The project follows a component-based architecture with all customization centra
 - All components are in `.astro` format (not React/Vue/etc)
 - The project uses IBM Plex Mono font loaded from Google Fonts
 - Social links in the config are all optional and will conditionally render
+- To add screenshots to a gallery, drop image files (png/jpg/webp/gif/avif/svg) into `public/screenshots/<slug>/` and rebuild; empty folders render an empty state in the gallery page
 
 ## Working with Components
 

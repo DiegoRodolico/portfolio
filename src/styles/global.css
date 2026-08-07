@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Modo oscuro por clase (.dark en <html>), controlado por el toggle del sitio */
+@custom-variant dark (&:where(.dark, .dark *));
+
 body {
   font-family: 'IBM Plex Mono', monospace;
 }

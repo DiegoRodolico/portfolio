@@ -79,6 +79,7 @@ projects: [
     name: "Project Name",
     description: "Brief description of what the project does and its impact",
     link: "https://github.com/yourusername/project",
+    gallerySlug: "project-name", // optional: adds a "Ver Galería" button. Drop screenshots in public/screenshots/project-name/
     skills: ["React", "Node.js", "AWS"], // Technologies used
   }
 ]

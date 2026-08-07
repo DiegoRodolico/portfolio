@@ -10,7 +10,7 @@ import { siteConfig } from "../config";
 import "../styles/global.css";
 ---
 
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -47,13 +47,13 @@ import "../styles/global.css";
   <body>
     <button
       id="theme-toggle"
-      class="fixed top-4 right-4 z-[100] p-2.5 rounded-xl border border-gray-200 bg-white shadow-sm hover:scale-105 transition-all duration-300 cursor-pointer flex items-center justify-center"
+      class="fixed top-4 right-4 z-[100] p-2.5 rounded-xl border border-gray-200 bg-white shadow-sm hover:scale-105 transition-all duration-300 cursor-pointer flex items-center justify-center dark:bg-slate-800 dark:border-slate-700"
       aria-label="Cambiar tema"
     >
       <svg id="theme-toggle-sun" class="hidden w-5 h-5 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z"></path>
       </svg>
-      <svg id="theme-toggle-moon" class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <svg id="theme-toggle-moon" class="w-5 h-5 text-gray-700 dark:text-slate-100" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
       </svg>
     </button>
@@ -101,7 +101,7 @@ import "../styles/global.css";
 </html>
 
 <style is:global>
-  /* Inyecciones CSS globales para cambiar el tema de todos los componentes automáticamente */
+  /* Fondo y color base del modo oscuro (el resto se resuelve con variantes dark: de Tailwind) */
   html.dark {
     background-color: #0f172a !important;
     color: #f1f5f9 !important;
@@ -109,80 +109,5 @@ import "../styles/global.css";
   html.dark body {
     background-color: #0f172a !important;
     color: #f1f5f9 !important;
-  }
-  
-  /* Ajustes del Header */
-  html.dark #header a {
-    color: #94a3b8 !important;
-  }
-  html.dark #header a:hover {
-    color: #ffffff !important;
-  }
-  /* Maneja el fondo transparente/borroso del menú al hacer scroll */
-  html.dark [class*="bg-white/80"] {
-    background-color: rgba(15, 23, 42, 0.8) !important;
-    border-bottom: 1px solid #1e293b;
-  }
-
-  /* Ajustes de secciones */
-  html.dark #hero {
-    background-color: #0f172a !important;
-  }
-  html.dark #hero h2, html.dark #hero p {
-    color: #94a3b8 !important;
-  }
-  html.dark #hero h1 {
-    color: #f8fafc !important;
-  }
-
-  html.dark h2 {
-    color: #ffffff !important;
-  }
-  html.dark p {
-    color: #cbd5e1 !important;
-  }
-
-  /* Tarjetas (Proyectos, Experiencia, Educación) */
-  html.dark .bg-gray-50, 
-  html.dark .bg-white {
-    background-color: #1e293b !important;
-    border-color: #334155 !important;
-  }
-  html.dark h3 {
-    color: #f8fafc !important;
-  }
-  html.dark .border-gray-100,
-  html.dark .border-gray-200 {
-    border-color: #334155 !important;
-  }
-
-  /* Recuadros de Skills (Habilidades) */
-  html.dark .bg-gray-100 {
-    background-color: #334155 !important;
-    color: #f8fafc !important;
-  }
-  html.dark .bg-gray-100:hover {
-    background-color: #475569 !important;
-  }
-  
-  /* Botón de tema */
-  html.dark #theme-toggle {
-    background-color: #1e293b !important;
-    border-color: #334155 !important;
-  }
-
-  /* Footer */
-  html.dark footer {
-    background-color: #0f172a !important;
-    border-color: #1e293b !important;
-  }
-  html.dark footer h3 {
-    color: #ffffff !important;
-  }
-  html.dark footer a, html.dark footer p {
-    color: #94a3b8 !important;
-  }
-  html.dark footer svg {
-    stroke: #94a3b8;
   }
 </style>
