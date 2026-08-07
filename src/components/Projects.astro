@@ -1,6 +1,57 @@
 ---
 import { siteConfig } from "../config";
 const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
+
+// Buscador inteligente de íconos oficiales de programación
+const getSkillIcon = (skill: string) => {
+  const name = skill.toLowerCase().trim();
+  const customMappings: Record<string, string> = {
+    "react": "devicon-react-original colored",
+    "react.js": "devicon-react-original colored",
+    "reactjs": "devicon-react-original colored",
+    "vue": "devicon-vuejs-plain colored",
+    "vue.js": "devicon-vuejs-plain colored",
+    "vuejs": "devicon-vuejs-plain colored",
+    "angular": "devicon-angularjs-plain colored",
+    "node": "devicon-nodejs-plain colored",
+    "node.js": "devicon-nodejs-plain colored",
+    "nodejs": "devicon-nodejs-plain colored",
+    "aws": "devicon-amazonwebservices-plain-wordmark colored",
+    "docker": "devicon-docker-plain colored",
+    "git": "devicon-git-plain colored",
+    "github": "devicon-github-original",
+    "html": "devicon-html5-plain colored",
+    "html5": "devicon-html5-plain colored",
+    "css": "devicon-css3-plain colored",
+    "css3": "devicon-css3-plain colored",
+    "js": "devicon-javascript-plain colored",
+    "javascript": "devicon-javascript-plain colored",
+    "ts": "devicon-typescript-plain colored",
+    "typescript": "devicon-typescript-plain colored",
+    "python": "devicon-python-plain colored",
+    "c++": "devicon-cplusplus-plain colored",
+    "c#": "devicon-csharp-plain colored",
+    "java": "devicon-java-plain colored",
+    "php": "devicon-php-plain colored",
+    "ruby": "devicon-rails-plain colored",
+    "sql": "devicon-sqlite-plain colored",
+    "postgresql": "devicon-postgresql-plain colored",
+    "mysql": "devicon-mysql-plain colored",
+    "mongodb": "devicon-mongodb-plain colored",
+    "express": "devicon-express-original",
+    "next.js": "devicon-nextjs-current-line",
+    "nextjs": "devicon-nextjs-current-line",
+    "astro": "devicon-astro-plain colored",
+    "tailwind": "devicon-tailwindcss-shadowless colored",
+    "tailwindcss": "devicon-tailwindcss-shadowless colored",
+    "sass": "devicon-sass-original colored",
+    "figma": "devicon-figma-plain colored"
+  };
+
+  if (customMappings[name]) return customMappings[name];
+  const sanitized = name.replace(/[\s\.\-\#\+]/g, "");
+  return `devicon-${sanitized}-plain colored`;
+};
 ---
 
 {
@@ -81,10 +132,12 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                           <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
                             {project.skills.map((skill) => (
                               <span
-                                class={`px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gray-900 text-white rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 ${
-                                  project.link ? "group-hover:bg-gray-800" : ""
+                                class={`inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gray-900 text-white dark:bg-slate-800 dark:text-slate-100 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 ${
+                                  project.link ? "group-hover:bg-gray-800 dark:group-hover:bg-slate-700" : ""
                                 }`}
                               >
+                                {/* Inyección automática del ícono de la tecnología */}
+                                <i class={`${getSkillIcon(skill)} text-sm`}></i>
                                 {skill}
                               </span>
                             ))}
