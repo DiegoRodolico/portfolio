@@ -1,188 +1,155 @@
-<img width="1943" height="1093" alt="image" src="https://github.com/user-attachments/assets/cc2ff955-17c2-48c7-81c8-479a0f061850" />
+# Portfolio de Diego Rodolico
 
-# DevPortfolio Template
+Portfolio personal de [Diego Rodolico](https://github.com/DiegoRodolico), desarrollador full stack especializado en Python/Django, Node.js, React y PostgreSQL. Sitio one-page en español con modo claro/oscuro y galerías de capturas por proyecto.
 
-A modern, minimalist portfolio template built with Astro and Tailwind CSS. Perfect for developers looking to showcase their skills, experience, and projects in a clean, professional way.
+Construido con [Astro](https://astro.build/) y [Tailwind CSS v4](https://tailwindcss.com/), y desplegable en cualquier hosting estático.
 
-This was completely rebuilt from the ground up from V1. This template was built to be entirely ready to go with a quick config edit (see below) but also provides the ability to easily extend in whatever way you want.
+## Créditos
 
-This template also comes with `CLAUDE.md` and `.cursor/rules` files for easy integration with your existing AI workflows.
+Este proyecto está basado en el template **DevPortfolio** de [Ryan Fitzgerald](https://github.com/RyanFitzgerald/devportfolio), y fue personalizado por completo: contenido propio, traducción al español, tema oscuro, galerías de proyectos y ajustes de responsive.
 
-> **📬 Connect & Share!**  
-> For questions and updates, feel free to reach out on [**X (Twitter)**](https://x.com/rfitzio).  
-> If you've built and published your personal site with this template, I'd love to see it! Send me a DM 🚀
+- Template original: [RyanFitzgerald/devportfolio](https://github.com/RyanFitzgerald/devportfolio)
 
-## Preview
+## Características
 
-To view a live preview of the site, [click here](https://ryanfitzgerald.github.io/devportfolio/).
+- **One-page** con secciones: Hero, Sobre mí, Proyectos, Experiencia y Educación
+- **Modo claro/oscuro** con toggle persistente (Tailwind v4 + `@custom-variant dark`)
+- **Galerías por proyecto**: botón "Ver Galería" que abre `/galeria/<slug>/` con lightbox (navegación con teclado)
+- **Contenido centralizado** en `src/config.ts` — no hace falta tocar componentes para editar el sitio
+- **Secciones condicionales**: si una sección no tiene datos en la config, no se renderiza
+- Icons de [Tabler Icons](https://tabler.io/icons)
 
-## Built With
+## Stack
 
-- **[Astro](https://astro.build/)** - Static site generator for modern web apps
-- **[Tailwind CSS v4](https://tailwindcss.com/)** - Utility-first CSS framework
-- **[Tabler Icons](https://tabler.io/icons)** - Free and open source icons
-- **TypeScript** - For type-safe configuration
+- [Astro](https://astro.build/) — static site generator
+- [Tailwind CSS v4](https://tailwindcss.com/) — CSS utility-first
+- [Tabler Icons](https://tabler.io/icons) — iconos open source
+- TypeScript — configuración tipada
 
-## Updating the Template
+## Personalizar el sitio
 
-### Configuration
+Toda la configuración vive en `src/config.ts`. Ese archivo controla:
 
-The template is designed to be easily customizable through the `src/config.ts` file. This single file controls:
+- **Datos personales**: nombre, título, descripción
+- **Color de acento**: `accentColor` (se propaga por todo el sitio)
+- **Links sociales**: email, LinkedIn, WhatsApp y GitHub (opcionales)
+- **Sobre mí**: biografía (`aboutMe`) y skills
+- **Proyectos**: nombre, descripción, link, `gallerySlug` y tecnologías
+- **Experiencia**: empresa, cargo, rango de fechas y logros
+- **Educación**: institución, título y logros
 
-- **Personal Information**: Name, title, description
-- **Accent Color**: Primary color theme (changing this will change the accent color site wide)
-- **Social Links**: Email, LinkedIn, Twitter, GitHub (all optional)
-- **About Section**: Personal bio/description
-- **Skills**: List of technical skills
-- **Projects**: Project showcase with descriptions and links
-- **Experience**: Work history with bullet points
-- **Education**: Educational background and achievements
+Si se vacía `skills`, `projects`, `experience` o `education`, la sección correspondiente se oculta sola.
 
-If skills, projects, experience, or education are removed from the config, those sections will be hidden entirely.
+### Estructura de ejemplo
 
-### Example structures
-
-Here's what the config data structure looks like for each section:
-
-#### Basic Information
 ```typescript
-name: "Your Name",
-title: "Your Job Title",
-description: "Brief site description",
-accentColor: "#1d4ed8", // Hex color for theme
-```
+// Datos básicos
+name: "Diego Rodolico",
+title: "Desarrollador Full Stack",
+description: "Portfolio de Diego Rodolico, desarrollador full stack...",
+accentColor: "#1d4ed8",
 
-#### Social Links (all optional)
-```typescript
+// Redes (todas opcionales)
 social: {
-  email: "your-email@example.com",
-  linkedin: "https://linkedin.com/in/yourprofile",
-  twitter: "https://twitter.com/yourprofile", 
-  github: "https://github.com/yourusername",
-}
-```
+  email: "mailto:rodolicodiego@gmail.com",
+  linkedin: "https://www.linkedin.com/in/diego-rodolico/",
+  whatsapp: "https://wa.me/5491166762487",
+  github: "https://github.com/DiegoRodolico",
+},
 
-#### About Section
-```typescript
-aboutMe: "A paragraph describing yourself, your background, interests, and what you're passionate about. This appears in the About section of your portfolio."
-```
-
-#### Skills
-```typescript
-skills: ["JavaScript", "React", "Node.js", "Python", "AWS", "Docker"]
-```
-
-#### Projects
-```typescript
+// Proyectos (gallerySlug es opcional)
 projects: [
   {
-    name: "Project Name",
-    description: "Brief description of what the project does and its impact",
-    link: "https://github.com/yourusername/project",
-    gallerySlug: "project-name", // optional: adds a "Ver Galería" button. Drop screenshots in public/screenshots/project-name/
-    skills: ["React", "Node.js", "AWS"], // Technologies used
-  }
-]
-```
+    name: "Reno USA - Backend",
+    description: "Backend completo en Node.js/Express...",
+    link: "https://github.com/DiegoRodolico/i006-reno-usa-fullstack",
+    gallerySlug: "reno-usa", // agrega botón "Ver Galería"
+    skills: ["Node.js", "Express", "PostgreSQL", "Prisma", "Docker"],
+  },
+],
 
-#### Experience
-```typescript
+// Experiencia
 experience: [
   {
-    company: "Company Name",
-    title: "Your Job Title",
-    dateRange: "Jan 2022 - Present",
-    bullets: [
-      "Led development of microservices architecture serving 1M+ users",
-      "Reduced API response times by 40% through optimization",
-      "Mentored team of 5 junior developers",
-    ],
-  }
-]
-```
+    company: "Contracultura Bar & Café",
+    title: "Encargado de sistemas",
+    dateRange: "2021 - Presente",
+    bullets: ["Sistema de gestión interno...", "Otra tarea..."],
+  },
+],
 
-#### Education
-```typescript
+// Educación
 education: [
   {
-    school: "University Name",
-    degree: "Bachelor of Science in Computer Science",
-    dateRange: "2014 - 2018",
-    achievements: [
-      "Graduated Magna Cum Laude with 3.8 GPA",
-      "Dean's List all semesters",
-      "President of Computer Science Club"
-    ]
-  }
-]
+    school: "UNAHUR",
+    degree: "Tecnicatura en Informática",
+    dateRange: "2024 - Presente",
+    achievements: ["En curso", "..."],
+  },
+],
 ```
 
-### Icons
+## Galerías de capturas
 
-The template uses [Tabler Icons](https://tabler.io/icons) for all icons. If you wish to add more icons and have it look consistent with what's already there, you can browse through their extensive icon library.
+Cada proyecto con `gallerySlug` muestra un botón **"Ver Galería"** que enlaza a `/galeria/<slug>/`.
 
-## Project Structure
+1. Creá una carpeta `public/screenshots/<slug>/` (el slug debe coincidir con `gallerySlug`).
+2. Copiá ahí las capturas (`.png`, `.jpg`, `.jpeg`, `.gif`, `.webp`, `.avif`, `.svg`).
+3. Reconstruí el sitio (`npm run build`). Las imágenes se leen automáticamente en build-time (`src/lib/gallery.ts`) y se ordenan numéricamente.
+
+Si la carpeta está vacía, la galería muestra un estado vacío.
+
+## Estructura del proyecto
 
 ```
-devportfolio/
+portfolio-diego/
 ├── public/
-│   └── favicon.svg          # Site favicon
+│   ├── favicon.svg                 # Favicon
+│   └── screenshots/                # Capturas por proyecto (subcarpeta por slug)
+│       ├── reno-usa/
+│       ├── contracultura/
+│       └── gamehub/
 ├── src/
-│   ├── components/          # Astro components
-│   │   ├── About.astro      # About section
-│   │   ├── Education.astro  # Education section
-│   │   ├── Experience.astro # Work experience section
-│   │   ├── Footer.astro     # Site footer
-│   │   ├── Header.astro     # Navigation header
-│   │   ├── Hero.astro       # Hero/intro section
-│   │   └── Projects.astro   # Projects showcase
+│   ├── components/                 # Secciones en Astro
+│   │   ├── About.astro
+│   │   ├── Education.astro
+│   │   ├── Experience.astro
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
+│   │   ├── Hero.astro
+│   │   └── Projects.astro
+│   ├── lib/
+│   │   └── gallery.ts              # Lee las capturas de cada galería
 │   ├── pages/
-│   │   └── index.astro      # Main page layout
+│   │   ├── index.astro             # Página principal (one-page)
+│   │   └── galeria/[slug].astro    # Visor de galería con lightbox
 │   ├── styles/
-│   │   └── global.css       # Global styles
-│   └── config.ts            # Site configuration
-├── astro.config.mjs         # Astro configuration
-├── package.json             # Project dependencies
-├── tailwind.config.js       # Tailwind configuration
-└── tsconfig.json            # TypeScript configuration
+│   │   └── global.css              # Estilos globales + dark variant
+│   └── config.ts                   # Toda la configuración del sitio
+├── astro.config.mjs
+├── package.json
+└── tsconfig.json
 ```
 
-## Local Development
-
-If you'd like to run it locally:
+## Desarrollo local
 
 ```
-git clone https://github.com/RyanFitzgerald/devportfolio.git
-cd devportfolio
 npm install
-```
-
-After that, start up the Astro dev server with:
-
-```
 npm run dev
 ```
 
-## Deployment
+## Deploy
 
-The template can be deployed to any static hosting service easily (and in most cases, completely free). Here are some options:
+El sitio es estático y se puede desplegar gratis en cualquier hosting:
 
-- To deploy with Netlify, [click here](https://docs.astro.build/en/guides/deploy/netlify/).
-- To deploy with Vercel, [click here](https://docs.astro.build/en/guides/deploy/vercel/).
-- To deploy with GitHub Pages, [click here](https://docs.astro.build/en/guides/deploy/github/).
-- To deploy with Cloudflare Pages, [click here](https://docs.astro.build/en/guides/deploy/cloudflare/).
-- To deploy with Render, [click here](https://docs.astro.build/en/guides/deploy/render/).
+- [Netlify](https://docs.astro.build/en/guides/deploy/netlify/)
+- [Vercel](https://docs.astro.build/en/guides/deploy/vercel/)
+- [GitHub Pages](https://docs.astro.build/en/guides/deploy/github/)
+- [Cloudflare Pages](https://docs.astro.build/en/guides/deploy/cloudflare/)
+- [Render](https://docs.astro.build/en/guides/deploy/render/)
 
-Want to deploy somewhere else? Find more guides [here](https://docs.astro.build/en/guides/deploy/).
+Más guías en [docs.astro.build](https://docs.astro.build/en/guides/deploy/).
 
-## Changelog
+## Licencia
 
-To view the changelog, see CHANGELOG.md.
-
-## License
-
-This project is fully and completely MIT. See LICENSE.md.
-
-## Questions?
-
-Feel free to reach out on [X (Twitter)](https://x.com/rfitzio) if you have any questions or need help.
+MIT — ver [LICENSE.md](LICENSE.md). El template original **DevPortfolio** es de [Ryan Fitzgerald](https://github.com/RyanFitzgerald/devportfolio).
