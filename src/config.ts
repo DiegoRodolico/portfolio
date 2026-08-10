@@ -13,18 +13,21 @@ export const siteConfig = {
   aboutMe:
     "Desarrollador full stack que construye aplicaciones completas de punta a punta: backend, modelado de datos e interfaces prácticas y funcionales. Experiencia real con Python/Django, React, Node.js/Express y bases de datos SQL/PostgreSQL, en proyectos desarrollados en equipo con git y metodologías ágiles. Me motiva resolver problemas concretos de negocio con tecnología.",
   skills: [
+    "Linux",
+    "Debian",
+    "Java",
+    "Spring",
     "JavaScript",
-    "TypeScript",
-    "React",
     "Node.js",
-    "Express",
+    "Tailwind CSS",
     "Python",
+    "Express",
     "Django",
+    "Git",
     "PostgreSQL",
+    "MySQL",
     "Prisma",
     "Docker",
-    "Tailwind CSS",
-    "Git",
   ],
   projects: [
     {
