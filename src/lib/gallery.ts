@@ -12,7 +12,7 @@ export function getGalleryImages(slug: string): string[] {
     .readdirSync(dir)
     .filter((file) => IMAGE_EXT.test(file))
     .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
-    .map((file) => `/screenshots/${slug}/${file}`);
+    .map((file) => `${import.meta.env.BASE_URL}screenshots/${slug}/${file}`);
 }
 
 export function hasGalleryImages(slug: string): boolean {
