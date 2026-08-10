@@ -32,7 +32,6 @@ export const siteConfig = {
       description:
         "Desarrollé el backend completo de esta plataforma para una empresa de arquitectura que remodela inmuebles: API REST en Node.js/Express con arquitectura en capas (controllers, services, routes y middleware), modelo de datos en PostgreSQL con Prisma ORM y sistema de autenticación. Endpoints para la gestión de proyectos por fases, tareas por oficio, registro diario de avance, detección de incidencias y reportes exportables a PDF. Trabajo en equipo dentro de un monorepo, con Docker Compose para levantar el entorno y despliegue en Vercel.",
       link: "https://github.com/DiegoRodolico/i006-reno-usa-fullstack",
-      gallerySlug: "reno-usa",
       skills: ["Node.js", "Express", "PostgreSQL", "Prisma", "Docker"],
     },
     {
@@ -40,7 +39,6 @@ export const siteConfig = {
       description:
         "Aplicación web fullstack en Django para la gestión integral de un bar: productos, categorías, clientes, mesas y pedidos. Incluye CRUD completo, dashboard de control con alertas de stock crítico y flujo de reposición de inventario. Modelado relacional en SQLite, panel de administración y UI responsive con Bootstrap.",
       link: "https://github.com/DiegoRodolico/contracultura_bar_web",
-      gallerySlug: "contracultura",
       skills: ["Python", "Django", "SQLite", "Bootstrap"],
     },
     {
@@ -48,7 +46,6 @@ export const siteConfig = {
       description:
         "Sitio web frontend para una comunidad de gaming que organiza torneos de videojuegos para recaudar donaciones para comedores y ONGs. Landing con torneos en curso, rankings y galería; panel de administración con login para crear, editar y eliminar torneos; y formulario de colaboración con lógica de formularios dinámicos. Desarrollado con HTML, CSS y JavaScript puro.",
       link: "https://github.com/DiegoRodolico/pagina",
-      gallerySlug: "gamehub",
       skills: ["HTML", "CSS", "JavaScript"],
     },
   ],
@@ -66,7 +63,7 @@ export const siteConfig = {
     {
       company: "Contracultura Bar & Café",
       title: "Encargado y Desarrollador de Sistemas",
-      dateRange: "2021 - Presente",
+      dateRange: "2020 - Presente",
       bullets: [
         "Desarrollé e implementé el sistema de gestión integral del bar (productos, clientes, mesas y pedidos) con Django, digitalizando la operación diaria del local.",
         "Gestión del día a día del negocio: manejo de equipo, control de stock e integración de tareas, tanto liderando como colaborando.",
@@ -78,10 +75,9 @@ export const siteConfig = {
     {
       school: "Universidad Nacional de Hurlingham (UNAHUR)",
       degree: "Tecnicatura Universitaria en Informática",
-      dateRange: "2024 - Presente",
+      dateRange: "2025 - Presente",
       achievements: [
         "Formación en programación orientada a objetos, estructuras de datos, bases de datos y desarrollo de software.",
-        "Cursando Objetos 1 con proyectos en equipo y trabajo colaborativo con Git.",
       ],
     },
     {
