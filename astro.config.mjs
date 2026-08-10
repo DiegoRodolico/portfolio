@@ -7,5 +7,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: 'https://DiegoRodolico.github.io/portfolio/'
+  site: 'https://DiegoRodolico.github.io/portfolio/',
+  base: '/portfolio/',
 });
