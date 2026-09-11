@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Diego Rodolico",
-  title: "Analista de Datos | FullStack Developer",
+  title: "Desarrollador Fullstack | Data Analytics",
   description:
-    "Portfolio de Diego Rodolico, analista de datos y desarrollador full stack especializado en Phyton, Django, React, Node.js y PostgreSQL.",
+    "Portfolio de Diego Rodolico, desarrollador fullstack y analista de datos especializado en Python, Django, pandas, NumPy y visualización de datos.",
   accentColor: "#1d4ed8",
   social: {
     email: "mailto:rodolicodiego@gmail.com",
@@ -11,10 +11,10 @@ export const siteConfig = {
     github: "https://github.com/DiegoRodolico",
   },
   aboutMe:
-    "Analista de datos y desarrollador con experiencia construyendo dashboards de analítica de ventas, procesamiento de datos con pandas y visualización interactiva. Transformo datos en decisiones de negocio."
-  "Experiencia práctica diseñando KPIs, generando reportes automatizados y construyendo herramientas de visualización para la optimización de procesos. Combino la capacidad de desarrollar soluciones fullstack con una fuerte orientación a datos y business intelligence.",
+    "Desarrollador fullstack y analista de datos con experiencia construyendo dashboards de analítica de ventas, procesamiento de datos con pandas y visualización interactiva con Chart.js. Transformo datos en decisiones de negocio. Experiencia práctica diseñando KPIs, generando reportes automatizados y construyendo herramientas de visualización para la optimización de procesos. Combino la capacidad de desarrollar soluciones fullstack con una fuerte orientación a datos y business intelligence.",
   skills: [
     "Linux",
+    "Debian",
     "Python",
     "Django",
     "Pandas",
@@ -25,9 +25,10 @@ export const siteConfig = {
     "Spring",
     "JavaScript",
     "Node.js",
+    "Tailwind CSS",
     "Express",
+    "Git",
     "Prisma",
-    "Debian",
     "Docker",
   ],
   projects: [
@@ -40,12 +41,12 @@ export const siteConfig = {
       skills: ["Node.js", "Express", "PostgreSQL", "Prisma", "Docker"],
     },
     {
-      name: "Contracultura Bar - Sistema de Gestión",
+      name: "Contracultura Bar - Sistema de Gestión con Data Analytics",
       description:
-        "Aplicación web fullstack en Django para la gestión integral de un bar: productos, categorías, clientes, mesas y pedidos. Incluye CRUD completo, dashboard de control con alertas de stock crítico y flujo de reposición de inventario. Modelado relacional en SQLite, panel de administración y UI responsive con Bootstrap.",
+        "Sistema de gestión de bar con módulo de analítica de datos desarrollado con Python, Django y pandas. Dashboard de KPIs en tiempo real (facturación total, ticket promedio, producto estrella), 5 reportes visuales interactivos con Chart.js (tendencia diaria, pedidos por tipo, top productos, facturación por hora, revenue por categoría), análisis por ventana de tiempo (7/30/90 días) y control de stock con niveles de severidad. Procesamiento de datos históricos para la toma de decisiones de negocio.",
       link: "https://github.com/DiegoRodolico/contracultura_bar_web",
       gallerySlug: "contracultura",
-      skills: ["Python", "Django", "SQLite", "Bootstrap"],
+      skills: ["Python", "Django", "Pandas", "NumPy", "Chart.js", "SQLite", "Bootstrap"],
     },
     {
       name: "GameHub Solidario - Torneos de Gaming con Impacto Social",
@@ -69,12 +70,12 @@ export const siteConfig = {
     },
     {
       company: "Contracultura Bar & Café",
-      title: "Encargado y Desarrollador de Sistemas",
+      title: "Encargado y Data Analytics Developer",
       dateRange: "2020 - Presente",
       bullets: [
-        "Desarrollé e implementé el sistema de gestión integral del bar (productos, clientes, mesas y pedidos) con Django, digitalizando la operación diaria del local.",
-        "Gestión del día a día del negocio: manejo de equipo, control de stock e integración de tareas, tanto liderando como colaborando.",
-        "Traduje necesidades reales de un negocio en una solución de software funcional que hoy usan en el local.",
+        "Desarrollé e implementé sistema de gestión integral con módulo de analítica de datos utilizando Python, Django, pandas y Chart.js, aplicado a la toma de decisiones de negocio.",
+        "Construí dashboard de KPIs en tiempo real: facturación total, ticket promedio, producto estrella, ocupación de mesas y alertas de stock crítico con niveles de severidad.",
+        "Desarrollé 5 reportes visuales interactivos para análisis de ventas por período, tipo de pedido, producto, hora del día y categoría, con filtros por ventana de tiempo (7/30/90 días).",
       ],
     },
   ],

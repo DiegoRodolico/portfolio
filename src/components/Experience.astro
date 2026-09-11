@@ -22,17 +22,6 @@ const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
             <div class="relative">
               {siteConfig.experience.map((exp, index) => (
                 <div class="relative mb-12 last:mb-0">
-                  {/* Círculo de la línea de tiempo */}
-                  <div
-                    class="absolute left-1/2 -top-2 w-4 h-4 border-2 rounded-full -translate-x-1/2 z-20 transition-all duration-300"
-                    style={`border-color: ${siteConfig.accentColor}; background-color: ${siteConfig.accentColor}`}
-                  />
-
-                  {/* Línea conectora vertical */}
-                  {index < siteConfig.experience.length - 1 && (
-                    <div class="absolute left-1/2 top-2 w-0.5 h-[calc(100%+3rem)] bg-gray-200 dark:bg-slate-800 -translate-x-1/2 z-10" />
-                  )}
-
                   {/* Tarjeta de la experiencia */}
                   <div class="bg-gray-50 dark:bg-slate-800 rounded-lg shadow-sm border border-gray-100 dark:border-slate-700 p-4 sm:p-5 md:p-6 hover:shadow-md transition-all duration-300">
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
