@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Diego Rodolico",
-  title: "Desarrollador Full Stack",
+  title: "Analista de Datos | FullStack Developer",
   description:
-    "Portfolio de Diego Rodolico, desarrollador full stack especializado en Django, React, Node.js y PostgreSQL.",
+    "Portfolio de Diego Rodolico, analista de datos y desarrollador full stack especializado en Phyton, Django, React, Node.js y PostgreSQL.",
   accentColor: "#1d4ed8",
   social: {
     email: "mailto:rodolicodiego@gmail.com",
@@ -11,22 +11,23 @@ export const siteConfig = {
     github: "https://github.com/DiegoRodolico",
   },
   aboutMe:
-    "Desarrollador full stack que construye aplicaciones completas de punta a punta: backend, modelado de datos e interfaces prácticas y funcionales. Experiencia real con Python/Django, React, Node.js/Express y bases de datos SQL/PostgreSQL, en proyectos desarrollados en equipo con git y metodologías ágiles. Me motiva resolver problemas concretos de negocio con tecnología.",
+    "Analista de datos y desarrollador con experiencia construyendo dashboards de analítica de ventas, procesamiento de datos con pandas y visualización interactiva. Transformo datos en decisiones de negocio."
+  "Experiencia práctica diseñando KPIs, generando reportes automatizados y construyendo herramientas de visualización para la optimización de procesos. Combino la capacidad de desarrollar soluciones fullstack con una fuerte orientación a datos y business intelligence.",
   skills: [
     "Linux",
-    "Debian",
+    "Python",
+    "Django",
+    "Pandas",
+    "NumPy",
+    "MySQL",
+    "PostgreSQL",
     "Java",
     "Spring",
     "JavaScript",
     "Node.js",
-    "Tailwind CSS",
-    "Python",
     "Express",
-    "Django",
-    "Git",
-    "PostgreSQL",
-    "MySQL",
     "Prisma",
+    "Debian",
     "Docker",
   ],
   projects: [
