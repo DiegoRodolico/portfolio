@@ -1,6 +1,10 @@
 ---
 import { siteConfig } from "../config";
 const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
+const customImageIcons: Record<string, string> = {
+  wollok: "icons/wollok.png",
+  "wollok game": "icons/wollok-game.png",
+};
 
 // Buscador inteligente de íconos oficiales de programación
 const getSkillIcon = (skill: string) => {
@@ -129,7 +133,21 @@ const getSkillIcon = (skill: string) => {
                                 class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gray-900 text-white dark:bg-slate-800 dark:text-slate-100 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 group-hover:bg-gray-800 dark:group-hover:bg-slate-700"
                               >
                                 {/* Inyección automática del ícono de la tecnología */}
-                                <i class={`${getSkillIcon(skill)} text-sm`}></i>
+                                {skill.toLowerCase() === "micropython" ? (
+                                  <img
+                                    src={import.meta.env.BASE_URL + "icons/micropython.svg"}
+                                    alt=""
+                                    class="h-4 w-4 object-contain invert"
+                                  />
+                                ) : customImageIcons[skill.toLowerCase().trim()] ? (
+                                  <img
+                                    src={import.meta.env.BASE_URL + customImageIcons[skill.toLowerCase().trim()]}
+                                    alt=""
+                                    class="h-4 w-4 object-contain"
+                                  />
+                                ) : (
+                                  <i class={`${getSkillIcon(skill)} text-sm`}></i>
+                                )}
                                 {skill}
                               </span>
                             ))}

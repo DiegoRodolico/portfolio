@@ -1,6 +1,11 @@
 ---
 import { siteConfig } from "../config";
 
+const customImageIcons: Record<string, string> = {
+  wollok: "icons/wollok.png",
+  "wollok game": "icons/wollok-game.png",
+};
+
 // Función inteligente para mapear nombres de tecnologías con íconos oficiales
 const getSkillIcon = (skill: string) => {
   const name = skill.toLowerCase().trim();
@@ -94,7 +99,21 @@ const getSkillIcon = (skill: string) => {
               siteConfig.skills.map((skill) => (
                 <span class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 text-gray-800 rounded-full text-sm sm:text-base md:text-lg font-medium hover:bg-gray-200 transition-colors duration-200 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700">
                   {/* Icono inyectado a la izquierda */}
-                  <i class={`${getSkillIcon(skill)} text-lg sm:text-xl`}></i>
+                  {skill.toLowerCase() === "micropython" ? (
+                    <img
+                      src={import.meta.env.BASE_URL + "icons/micropython.svg"}
+                      alt=""
+                      class="h-5 w-5 object-contain dark:invert"
+                    />
+                  ) : customImageIcons[skill.toLowerCase().trim()] ? (
+                    <img
+                      src={import.meta.env.BASE_URL + customImageIcons[skill.toLowerCase().trim()]}
+                      alt=""
+                      class="h-5 w-5 object-contain"
+                    />
+                  ) : (
+                    <i class={`${getSkillIcon(skill)} text-lg sm:text-xl`}></i>
+                  )}
                   {skill}
                 </span>
               ))

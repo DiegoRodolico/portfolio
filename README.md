@@ -26,78 +26,7 @@ Este proyecto está basado en el template **DevPortfolio** de [Ryan Fitzgerald](
 - [Tabler Icons](https://tabler.io/icons) — iconos open source
 - TypeScript — configuración tipada
 
-## Personalizar el sitio
 
-Toda la configuración vive en `src/config.ts`. Ese archivo controla:
-
-- **Datos personales**: nombre, título, descripción
-- **Color de acento**: `accentColor` (se propaga por todo el sitio)
-- **Links sociales**: email, LinkedIn, WhatsApp y GitHub (opcionales)
-- **Sobre mí**: biografía (`aboutMe`) y skills
-- **Proyectos**: nombre, descripción, link, `gallerySlug` y tecnologías
-- **Experiencia**: empresa, cargo, rango de fechas y logros
-- **Educación**: institución, título y logros
-
-Si se vacía `skills`, `projects`, `experience` o `education`, la sección correspondiente se oculta sola.
-
-### Estructura de ejemplo
-
-```typescript
-// Datos básicos
-name: "Diego Rodolico",
-title: "Desarrollador Full Stack",
-description: "Portfolio de Diego Rodolico, desarrollador full stack...",
-accentColor: "#1d4ed8",
-
-// Redes (todas opcionales)
-social: {
-  email: "mailto:rodolicodiego@gmail.com",
-  linkedin: "https://www.linkedin.com/in/diego-rodolico/",
-  whatsapp: "https://wa.me/5491166762487",
-  github: "https://github.com/DiegoRodolico",
-},
-
-// Proyectos (gallerySlug es opcional)
-projects: [
-  {
-    name: "Reno USA - Backend",
-    description: "Backend completo en Node.js/Express...",
-    link: "https://github.com/DiegoRodolico/i006-reno-usa-fullstack",
-    gallerySlug: "reno-usa", // agrega botón "Ver Galería"
-    skills: ["Node.js", "Express", "PostgreSQL", "Prisma", "Docker"],
-  },
-],
-
-// Experiencia
-experience: [
-  {
-    company: "Contracultura Bar & Café",
-    title: "Encargado de sistemas",
-    dateRange: "2021 - Presente",
-    bullets: ["Sistema de gestión interno...", "Otra tarea..."],
-  },
-],
-
-// Educación
-education: [
-  {
-    school: "UNAHUR",
-    degree: "Tecnicatura en Informática",
-    dateRange: "2024 - Presente",
-    achievements: ["En curso", "..."],
-  },
-],
-```
-
-## Galerías de capturas
-
-Cada proyecto con `gallerySlug` muestra un botón **"Ver Galería"** que enlaza a `/galeria/<slug>/`.
-
-1. Creá una carpeta `public/screenshots/<slug>/` (el slug debe coincidir con `gallerySlug`).
-2. Copiá ahí las capturas (`.png`, `.jpg`, `.jpeg`, `.gif`, `.webp`, `.avif`, `.svg`).
-3. Reconstruí el sitio (`npm run build`). Las imágenes se leen automáticamente en build-time (`src/lib/gallery.ts`) y se ordenan numéricamente.
-
-Si la carpeta está vacía, la galería muestra un estado vacío.
 
 ## Estructura del proyecto
 
@@ -131,24 +60,6 @@ portfolio-diego/
 └── tsconfig.json
 ```
 
-## Desarrollo local
-
-```
-npm install
-npm run dev
-```
-
-## Deploy
-
-El sitio es estático y se puede desplegar gratis en cualquier hosting:
-
-- [Netlify](https://docs.astro.build/en/guides/deploy/netlify/)
-- [Vercel](https://docs.astro.build/en/guides/deploy/vercel/)
-- [GitHub Pages](https://docs.astro.build/en/guides/deploy/github/)
-- [Cloudflare Pages](https://docs.astro.build/en/guides/deploy/cloudflare/)
-- [Render](https://docs.astro.build/en/guides/deploy/render/)
-
-Más guías en [docs.astro.build](https://docs.astro.build/en/guides/deploy/).
 
 ## Licencia
 
