@@ -55,6 +55,7 @@ export const siteConfig = {
       name: "Iorio vs los Reptiloides: La Estación de Poder",
       description:
         "Juego 2D de plataformas y acción en pixel art, desarrollado en equipo como trabajo final de Programación con Objetos I usando Wollok y Wollok Game. Implementa dos niveles, desplazamiento lateral con cámara, salto y animaciones, enemigos con patrullaje y colisiones, sistema de vidas, objetos y armas, y un jefe final con barra de vida. El diseño aplica POO con clases para enemigos y jefe, y objetos que encapsulan estados de movimiento, orientación y apariencia.",
+      link: "https://github.com/DiegoRodolico/iorio-vs-reptiloides",
       gallerySlug: "iorio",
       skills: ["Wollok", "Wollok Game"],
     },
